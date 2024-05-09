@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Value("${minimal.age}")
-    private static int minimalAge;
+    private int minimalAge;
     private UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
@@ -39,7 +39,9 @@ public class UserServiceImpl implements UserService {
             log.error("Some user fields might be empty");
             throw new InvalidPropertiesException("some user fields might be empty");
         }
-        checkAge(user.getBirthDate());
+        if(!checkAge(user.getBirthDate())){
+            throw new UserIsNotOldEnoughException();
+        }
         if (users.contains(user)) {
             log.error("User already exists: {}", user.getEmail());
             throw new UserAlreadyExistsException("User is already exist!");
@@ -108,9 +110,11 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
-    private static void checkAge(LocalDate birthDate) {
-        if (Period.between(birthDate, LocalDate.now()).getYears() < minimalAge) {
-            throw new UserIsNotOldEnoughException();
+    private boolean checkAge(LocalDate birthDate) {
+        int years = Period.between(birthDate, LocalDate.now()).getYears();
+        if (years < minimalAge) {
+            return false;
         }
+        return true;
     }
 }
