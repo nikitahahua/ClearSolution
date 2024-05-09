@@ -27,7 +27,7 @@ Installation guide
 1. clone repository
 
 ```
-[pip install foobar](https://github.com/nikitahahua/ClearSolution.git)
+git clone https://github.com/nikitahahua/ClearSolution.git
 ```
 
 2. Set up a PostgreSQL server.
@@ -35,9 +35,15 @@ Change the configuration of application.properties (default username and passwor
 
 3. Launch
 
+```
+
 mvn package
+
 cd target
+
 java -jar ClearSolution-0.0.1-SNAPSHOT.jar
+
+```
 
 --
 
