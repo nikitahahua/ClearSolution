@@ -45,8 +45,6 @@ java -jar ClearSolution-0.0.1-SNAPSHOT.jar
 
 ```
 
---
-
 ### Results: 
 
 #### Crete valid user
@@ -55,7 +53,7 @@ java -jar ClearSolution-0.0.1-SNAPSHOT.jar
 
 #### Creating a user that is not old enough
 
-<img width="877" alt="image" src="https://github.com/nikitahahua/ClearSolution/assets/110698480/d3a04b39-11d9-4607-99af-7c336228933c">+
+<img width="877" alt="image" src="https://github.com/nikitahahua/ClearSolution/assets/110698480/d3a04b39-11d9-4607-99af-7c336228933c">
 
 #### Delete valid user
 
