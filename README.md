@@ -1,7 +1,5 @@
 ## Cear Solution Java practical test assignment
 
---
-
 ### Requirements:
 
 1. It has the following fields:
@@ -40,6 +38,7 @@ Change the configuration of application.properties (default username and passwor
 mvn package
 cd target
 java -jar ClearSolution-0.0.1-SNAPSHOT.jar
+
 --
 
 ### Results: 
